@@ -169,7 +169,6 @@ func getRequest(url string, queryList [][]string) ([]byte, error) {
 		q.Add(queryItem[0], queryItem[1])
 	}
 	req.URL.RawQuery = q.Encode()
-	logger.Info(req.URL.String())
 	resp, err := client.Do(req)
 	if err != nil {
 		return nil, err
